@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jacob's Photos</title>
+<meta name="description" content="Portfolio of Jacob. projects and photography.">
+<meta name="theme-color" content="#050907">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=VT323&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="home">
+<canvas id="c"></canvas>
+<header>
+  <nav>
+    <button id="n-jungle" class="on" onclick="go('jungle')">jungle</button>
+    <button id="n-projects" onclick="go('projects')">projects</button>
+    <button id="n-gallery" onclick="go('gallery')">gallery</button>
+    <button id="n-blog" onclick="go('blog')">blog</button>
+  </nav>
+  <div class="right">
+    <div id="stat">POS X:<span id="sx">00</span><br>POS Y:<span id="sy">00</span></div>
+    <button id="theme" onclick="toggleTheme()">day</button>
+  </div>
+</header>
+
+<main>
+  <!-- ===== HOME ===== (EDIT the text below) -->
+  <section id="v-jungle" class="view on">
+    <blockquote>
+      <p>"Yesterday is history, Tomorrow is a mystery, But today is a gift. That is why it is called the present."</p>
+      <cite>Master Oogway</cite>
+    </blockquote>
+    <div class="bio">
+      <h1>Hello, I'm Jacob.</h1>
+      <p>I'm a Photographer & Barista  </p>
+      <br>
+      <p>I like to capture all sorts of photos ranging from landscapes to theatre productions. This website is to show my photography and other skills.</p>
+      <div class="links">
+        <a href="https://github.com/itsbabp" target="_blank">github</a>/<a href="https://www.linkedin.com/in/jsphotos/" target="_blank">linkedin</a>/<a href="mailto:itsbabp@outlook.com">email</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="v-projects" class="view">
+    <h2>Projects</h2>
+    <div class="grid" id="pj"></div>
+  </section>
+
+  <section id="v-gallery" class="view">
+    <h2>Photography <small>your tagline here</small></h2>
+    <div class="grid" id="gl" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr))"></div>
+  </section>
+
+  <section id="v-blog" class="view"><p>coming soon.<b>_</b></p></section>
+</main>
+
+<div id="hud">SCAN: no signal</div>
+<div id="lb" onclick="this.classList.remove('on')"><img id="lbi" alt=""><p id="lbc"></p></div>
+
+<script src="content.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
