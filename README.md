@@ -5,3 +5,5 @@
 - `style.css` / `script.js` - look and jungle animation
 - `images/gallery`, `images/projects` - 
 - `favicon.svg` - tab icon
+
+- Work in progress!
