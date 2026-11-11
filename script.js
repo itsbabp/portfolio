@@ -13,9 +13,11 @@ const img=(s,t)=>s?`<img src="${s}" alt="${t}" loading="lazy">`:'add image';
 $('#lg').innerHTML=ME.logo+'<i>_</i>';
 $('#nv').innerHTML=[['about','紹介'],['work','作品'],['gallery','写真'],['blog','日記']].map(([a,j])=>`<a href="#${a}" data-s="${a}">${a}<small>${j}</small></a>`).join('')+`<a href="${CLIENTS}" target="_blank">clients ↗<small>顧客</small></a>`;
 const half=ME.words.map(w=>w+' // ').join('').repeat(6);
+function head(t){let hi=false,o=[];t.split('*').forEach((seg,k)=>{if(k)hi=!hi;seg.split(/\s+/).filter(Boolean).forEach(w=>o.push([w,hi]))});
+ return o.map(([w,h],i)=>`<span class="w"><i${h?' class="hl"':''} style="--d:${i*.05}">${w}</i></span>`).join(' ')}
 $('#app').innerHTML=`
 <section id="top" class="hero">
- <div><h1><span><i>${ME.tag}</i></span><span><i>${ME.tag2}</i></span></h1>
+ <div><h1>${head(ME.headline||`${ME.tag} *${ME.tag2}*`)}</h1>
   <div class="rv" style="--d:.5s">${ME.bio.map(b=>`<p>${b}</p>`).join('')}<div class="lk">${ME.links.map(([n,u])=>`<a href="${u}" target="_blank">${n}</a>`).join('')}</div></div></div>
  <div class="cd rv" style="--d:.3s"><div class="idh"><span>DOSSIER // 身分証</span><span>No. 0001</span></div>
   <div class="ph" style="--r:4/5">${ME.portrait?`<img src="${ME.portrait}" alt="${ME.name}">`:'add portrait<br>(set portrait in content.js)'}</div>
