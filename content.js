@@ -2,7 +2,7 @@
 const ME={
   logo:"Jacob's Photos",                 /* short mark in the top-left header (separate from your name below) */
   name:'Jacob',          /* full name: shown on the ID card and in the footer */
-  portrait:'images/stamd.jpg',   /* your portrait for the ID card, e.g. 'images/portrait.jpg' (leave '' for a placeholder) */
+  portrait:'images/gallery/stand.jpg',   /* your portrait for the ID card, e.g. 'images/portrait.jpg' (leave '' for a placeholder) */
   role:'Photographer',
   base:'Adelaide / South Australia',
   tag:'Moments',             /* big headline, line 1 */
