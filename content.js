@@ -5,8 +5,8 @@ const ME={
   portrait:'images/gallery/stand.jpg',   /* your portrait for the ID card, e.g. 'images/portrait.jpg' (leave '' for a placeholder) */
   role:'Photographer',
   base:'Adelaide / South Australia',
-  tag:'Moments',             /* big headline, line 1 */
-  tag2:'on record.',         /* big headline, line 2 (shown in crimson) */
+  tag:'A great photo captures both a', /* big headline, line 1 */
+  tag2:'moment and a feeling.', /* big headline, line 2 (shown in crimson) */
   statement:'Loreum Ispum Loreum Ispum Loreum Ispum Loreum Ispum Loreum Ispum',
   bio:['One line about you.','One line about what you shoot.'],
   links:[['github','https://github.com/itsbabp'],['instagram','https://instagram.com/itsbabpphotos'],['email','mailto:itsbabp@outlook.com']],
