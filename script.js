@@ -51,8 +51,8 @@ const tk=()=>{$('#ck').textContent=new Date().toLocaleTimeString('en-GB',{timeZo
 
 /* lightbox */
 let cur=0;
-function lb(i){const p=PHOTOS[i];if(!p.src)return;cur=i;$('#lbi').src=p.src;$('#lbc').textContent=`${pad(i+1)}/${pad(PHOTOS.length)} · ${p.title}${p.exif?' · '+p.exif:''}`;$('#lb').classList.add('on')}
-function cl(){$('#lb').classList.remove('on')}
+function lb(i){const p=PHOTOS[i];if(!p.src)return;cur=i;$('#lbi').src=p.src;$('#lbc').textContent=`${pad(i+1)}/${pad(PHOTOS.length)} · ${p.title}${p.exif?' · '+p.exif:''}`;document.body.style.overflow='hidden';$('#lb').classList.add('on')}
+function cl(){document.body.style.overflow='';$('#lb').classList.remove('on')}
 function step(d){let n=cur;for(let k=0;k<PHOTOS.length;k++){n=(n+d+PHOTOS.length)%PHOTOS.length;if(PHOTOS[n].src){lb(n);return}}}
 $('#lb').addEventListener('click',e=>{if(!e.target.closest('button')&&e.target.id!=='lbi'&&!e.target.closest('.bar'))cl()});
 addEventListener('keydown',e=>{if(!$('#lb').classList.contains('on'))return;if(e.key==='Escape')cl();if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)});
