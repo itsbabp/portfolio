@@ -91,3 +91,8 @@ html{scrollbar-gutter:stable}
 #lb button:hover{border-color:var(--red);color:var(--red)}
 @media(max-width:900px){.rail{display:none}.hero,.ab{grid-template-columns:1fr}.hero{padding-top:130px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}h1 i{transform:none}.bc{clip-path:none}}
+.pl{display:block;position:relative;overflow:hidden;cursor:pointer}
+.pl .ph img{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.pl:hover .ph img{transform:scale(1.05)}
+.pl:after{content:'OPEN FILE →';position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:linear-gradient(transparent,rgba(0,0,0,.85));font-size:11px;letter-spacing:.14em;opacity:0;transition:opacity .3s}
+.pl:hover:after{opacity:1}
