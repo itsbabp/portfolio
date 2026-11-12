@@ -18,7 +18,7 @@ const ABOUT=[
 ];
 /* img / src = image path, e.g. 'images/projects/one.jpg'. Leave '' for a placeholder. */
 const PROJECTS=[
-  {title:'Project one',desc:'A couple of sentences about what this is.',tags:['series'],tag:'2026',img:'',link:''},
+  {title:'Japan 2025',desc:'A STEM trip to Japan with my school',tags:['Trips'],tag:'2025',img:'images/gallery/land-castle.jpg',link:''},
   {title:'Project two',desc:'A couple of sentences about this one.',tags:['photo','series'],tag:'2025',img:'',link:''},
   {title:'Project three',desc:'Short and honest works best.',tags:['street'],tag:'2025',img:'',link:''}
 ];
