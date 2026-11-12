@@ -14,25 +14,24 @@ function head(t){let hi=false,o=[];t.split('*').forEach((seg,k)=>{if(k)hi=!hi;se
  return o.map(([w,h],i)=>`<span class="w"><i${h?' class="hl"':''} style="--d:${i*.05}">${w}</i></span>`).join(' ')}
 
 let idx=PROJECTS.findIndex(p=>p.slug===new URLSearchParams(location.search).get('p'));if(idx<0)idx=0;
-const P=PROJECTS[idx],N=PROJECTS[(idx+1)%PROJECTS.length],PH=P.photos||[];
+/* landscape shapes for the template slots: all close in size, a little variety */
+const RATIOS=['3/2','4/3','3/2','16/10','5/3','4/3','3/2','7/5','16/10','3/2'];
+const P=PROJECTS[idx];
+/* no photos listed yet? show 20 template slots */
+const PH=P.photos&&P.photos.length?P.photos:Array.from({length:20},()=>({src:'',title:'Photo title'}));
 document.title=`${P.title.replace(/\*/g,'')} · ${ME.name}`;
 $('#lg').innerHTML=ME.logo+'<i>_</i>';
 $('#nv').innerHTML=[['about','紹介'],['work','作品'],['gallery','写真'],['blog','日記']].map(([a,j])=>`<a href="index.html#${a}">${a}<small>${j}</small></a>`).join('')+`<a href="${CLIENTS}" target="_blank">clients ↗<small>顧客</small></a>`;
 $('#sec').textContent='CASE FILE '+pad(idx+1,4);
-const meta=[['DATE',P.tag],['PLACE',P.location||'—'],['FRAMES',PH.length],['TAGS',(P.tags||[]).map(t=>'#'+t).join(' ')]];
+const meta=[['DATE',P.tag],['PLACE',P.location||'—'],['FRAMES',PH.filter(p=>p.src).length||'—'],['TAGS',(P.tags||[]).map(t=>'#'+t).join(' ')]];
 $('#app').innerHTML=`
 <section class="hero pj">
- <div><a class="back" href="index.html#work">← back to work</a><h1>${head(P.title)}</h1><p class="lede rv" style="--d:.5s">${P.desc}</p></div>
+ <div><a class="back" href="index.html#work">← back</a><h1>${head(P.title)}</h1><p class="lede rv" style="--d:.5s">${P.desc}</p></div>
  <div class="cd rv" style="--d:.3s"><div class="idh"><span>CASE FILE ${pad(idx+1,4)}</span><span class="st">DECLASSIFIED</span></div>
   <div class="ph cv">${P.img?`<img src="${P.img}" alt="${P.title.replace(/\*/g,'')}">`:'add cover'}</div>
   <dl>${meta.map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl>${bar('case'+idx)}</div>
 </section>
-<section class="story"><div class="sh rv"><b>01</b><h2>Story</h2><span>物語</span></div>
- ${(P.story||[P.desc]).map((t,i)=>`<p class="rv" style="--d:${i*.1}s">${t}</p>`).join('')}</section>
-<section><div class="sh rv"><b>02</b><h2>Frames</h2><span>写真</span><em>${PH.length} frames</em></div>
- <div class="ms">${PH.map((p,i)=>`<figure class="fr rv" style="--d:${(i%4)*.1}s" onclick="lb(${i})">${p.src?`<img src="${p.src}" alt="${p.title||''}" loading="lazy">`:`<div class="ph" style="--r:${p.ratio||'4/5'}">add photo</div>`}<div class="ov"><span>▸ ${pad(i+1)}A</span><span>${p.title||''}<small>${p.exif||''}</small></span></div></figure>`).join('')}</div></section>
-<section class="nx"><div class="sh rv"><b>03</b><h2>Next</h2><span>次</span></div>
- ${PROJECTS.length>1&&N.slug?`<a class="big rv" href="project.html?p=${N.slug}">${N.title.replace(/\*/g,'')} →</a>`:''}<a class="big rv" href="index.html#work" style="--d:.1s">← All work</a>
+<section class="pg"><div class="ms pm">${PH.map((p,i)=>`<figure class="fr rv" style="--d:${(i%3)*.1}s" onclick="lb(${i})">${p.src?`<img src="${p.src}" alt="${p.title||''}" loading="lazy">`:`<div class="ph" style="--r:${p.ratio||RATIOS[i%RATIOS.length]}">add photo</div>`}<div class="ov"><span>▸ ${pad(i+1)}A</span><span>${p.title||''}<small>${p.exif||''}</small></span></div></figure>`).join('')}</div>
  <footer><span>FILE 0001 // ${ME.name}</span><span>©${new Date().getFullYear()} · 閉</span></footer></section>`;
 document.body.classList.add('go');
 

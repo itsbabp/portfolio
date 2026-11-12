@@ -21,8 +21,8 @@ const PROJECTS=[
   {slug:'japan-2025',title:'Japan *2025*',desc:'A STEM trip to Japan with my school',tags:['Trips'],tag:'2025',location:'Japan',img:'images/gallery/land-castle.jpg',link:'',
    story:['First paragraph, shown large.','Second paragraph.','Another paragraph.'],
    photos:[
-    {src:'images/projects/japan-2025/01.jpg',title:'Nagoya Castle',exif:''},
-    {src:'images/projects/japan-2025/02.jpg',title:'Photo title',exif:''}
+    {src:'images/projects/japan-2025/DSCF0387.jpg',title:'Gundum Statue',exif:''},
+    {src:'images/projects/japan-2025/DSCF0324.jpg',title:'3D lines',exif:''}
    ]},
   {title:'Project two',desc:'A couple of sentences about this one.',tags:['photo','series'],tag:'2025',img:'',link:''},
   {title:'Project three',desc:'Short and honest works best.',tags:['street'],tag:'2025',img:'',link:''}
