@@ -3,25 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Jacob's · Photography</title>
-<meta name="description" content="Photography portfolio of YOUR NAME.">
-<meta name="theme-color" content="#1a1a1a">
+<title>Jacob's Photos · Photography</title>
+<meta name="description" content="Photography portfolio.">
+<meta name="theme-color" content="#09090a">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<script src="transition.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500&family=Zen+Kaku+Gothic+New:wght@500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=1">
+<script>try{sessionStorage.getItem('pt')&&document.documentElement.classList.add('pt')}catch(e){}</script>
 </head>
-<body>
-<div id="ld"><div><span>accessing file</span><span>アクセス中</span></div><div><b id="cn">000</b><span id="lt">hold tight</span></div></div>
-<div class="hud"><i></i><i></i><i></i><i></i></div>
-<div class="rail l">FILE 0001 // PHOTOGRAPHY // 写真</div>
-<div class="rail r" id="sec">00 / INDEX</div>
-<header><a class="logo" href="#top" id="lg"></a><nav id="nv"></nav><div id="pg"></div></header>
+<body data-page="home">
+<div id="ld"><div class="lc"><div class="lt" id="lt"></div><div class="ln"><i id="lbar"></i></div><div class="lm m"><span>loading</span><span id="lnum">000</span></div></div></div>
+<header id="hd"></header>
 <main id="app"></main>
-<div class="sb"><span>SCROLL <span id="sp">000</span>%</span><span id="xy">X 0000 Y 0000</span><span id="ck">--:--:--</span></div>
-<div id="lb"><div class="st"><img id="lbi" alt=""></div><div class="bar"><span id="lbc"></span><span><button onclick="step(-1)">← prev</button> <button onclick="step(1)">next →</button> <button onclick="cl()">close ✕</button></span></div></div>
-<script>addEventListener('error',e=>{const l=document.getElementById('ld');if(l)l.remove();document.body.insertAdjacentHTML('afterbegin','<pre style="position:fixed;z-index:999;top:0;left:0;right:0;background:#a4133c;color:#fff;padding:12px;font:12px monospace;white-space:pre-wrap">Site error: '+e.message+' ('+(e.filename||'').split('/').pop()+':'+e.lineno+')</pre>')})</script>
-<script src="content.js"></script>
-<script src="script.js"></script>
+<script src="content.js?v=1"></script>
+<script src="common.js?v=1"></script>
+<script src="script.js?v=1"></script>
 </body>
 </html>

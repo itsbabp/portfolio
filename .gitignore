@@ -1,0 +1,6 @@
+# Keep full-size originals out of the repo
+originals/
+*.psd
+*.xmp
+.DS_Store
+Thumbs.db
