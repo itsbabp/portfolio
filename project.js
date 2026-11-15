@@ -33,7 +33,7 @@ $('#app').innerHTML=`
 <footer class="m"><span>© ${new Date().getFullYear()} ${ME.name}</span><span>photography</span></footer>`;
 function fill(list){
   PH=list;
-  $('#gl').innerHTML=PH.map((p,i)=>`<figure class="fr rv big" style="--d:${(i%3)*.1}s" onclick="lbOpen(PH,${i},U)">${p.src?`<img src="${U(p.src)}" alt="${p.title||''}" loading="lazy">`:`<div class="ph m" style="--r:${p.ratio||RATIOS[i%RATIOS.length]}">add photo</div>`}<div class="cp"><span>${p.title||''}</span><small>${p.exif||''}</small></div></figure>`).join('');
+  $('#gl').innerHTML=PH.map((p,i)=>`<figure class="fr rv big" style="--d:${(i%3)*.1}s${p.src?'':';--n:'+rn(p.ratio||RATIOS[i%RATIOS.length])}" onclick="lbOpen(PH,${i},U)">${p.src?`<img src="${U(p.src)}" alt="${p.title||''}" loading="lazy" onload="setN(this);getExif(this,PH[${i}])">`:`<div class="ph m">add photo</div>`}<div class="cp"><span>${p.title||''}</span><small>${p.exif||''}</small></div></figure>`).join('');
   const n=PH.filter(p=>p.src).length;if(n)$('.meta').insertAdjacentHTML('beforeend',`<span>frames · ${n}</span>`);
   if(document.body.classList.contains('go'))$$('.rv:not(.in)').forEach(el=>io.observe(el));
 }

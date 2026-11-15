@@ -9,7 +9,7 @@ const ME={
   accent:'#c01f48',      /* colour of the thin lines and the loading bar */
   repo:'itsbabp/portfolio',
   statement:'A few sentences about how you see things and what you care about capturing.',
-  bio:['One line about you.','One line about what you shoot.'],
+  bio:["Hi, I'm Jacob",'I like take photos for fun'],
   links:[['github','https://github.com/itsbabp'],['instagram','https://instagram.com/itsbabpphotos'],['email','mailto:itsbabp@outlook.com']]
 };
 const CLIENTS='https://itsbabpphotos.pixieset.com';   /* your client gallery */
@@ -17,14 +17,14 @@ const CLIENTS='https://itsbabpphotos.pixieset.com';   /* your client gallery */
 const ABOUT=[
   ['shoots','Canon 200D II / Canon EF-S 55-250mm f/4-5.6 IS STM','I like to capture all sorts of photos ranging from landscapes & portraits to theatre productions.'],
   ['based','Adelaide / South Australia'],
-  ['status','Commissions soon!']
+  ['status','Probably taking photos']
 ];
 /* Each project needs a "slug" that matches its folder name (japan-2025/ and ducks/).
    Photos for a project page go in "photos:[{src:'images/projects/japan-2025/01.jpg',title:'Nagoya Castle',exif:''}, ...]".
    Leave "photos" out and the page shows 20 empty landscape slots to fill. */
 const PROJECTS=[
   {slug:'japan-2025',title:'Japan *2025*',desc:'A STEM trip to Japan with my school',tags:['Trips'],tag:'2025',location:'Japan',img:'images/gallery/land-castle.jpg',folder:'images/projects/japan-2025'},
-  {slug:'ducks',title:'Ducks',desc:'A short description of this series.',tags:['Wildlife'],tag:'2026',location:'',img:''}
+  {slug:'ducks',title:'Ducks',desc:'A short description of this series.',tags:['Wildlife'],tag:'2026',location:'Pond',img:'images/gallery/9-11 2_80per_srgb-07.jpg',folder:'images/projects/ducks'},
 ];
 /* ratio only changes the placeholder shape; real photos keep their own proportions */
 const PHOTOS=[
