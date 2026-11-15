@@ -1,4 +1,4 @@
-<h1 align="center">Jacob's Photos</h1>
+<h1 align="center">Jacob's Photos (WIP)</h1>
 
 <p align="center">
   A quiet, fast photography portfolio.<br>
